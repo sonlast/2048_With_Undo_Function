@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C202048</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="C202048.ico">
+  <link rel="C202048" href="meta/C202048.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style type="text/css">
+    #custom-alert {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      padding: 20px;
+      border: 5px solid #3403f8;
+      border-radius: 20px;
+      z-index: 9999;
+  }
+
+    .alert-content {
+      text-align: center;
+      color: azure;
+  }
+
+    .alert-content button {
+      padding: 10px 20px;
+      background-color: #3403f8;
+      color: white;
+      border: 3px solid #3403f8;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      background: none;
+      border: 3px solid #3403f8;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .next-button {
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title"><sub>C2020</sub><sup>48</sup></h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <a class="hint-button" onclick="showNextMessage()">Guide</a>
+      <a class="restart-button">Reset</a>
+      <a class="restart-button undo-button disabled">Undo</a>
+    </div>
+
+    <hr style="border-top: 5px dotted black">
+
+    <div id="custom-alert">
+      <div class="alert-content">
+        <h1 id="alert-title">Guide</h1>
+        <p id="alert-message">'Ensure that the cell containing the highest value is positioned in one of the corners, with my personal preference being the bottom-right corner. To accomplish this goal...',</p>
+        <button class="close-button" onclick="closeAlert()">&times;</button>
+        <button class="next-button" onclick="showNextMessage()">NEXT</button>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="retry-button">You Want to try Again?</a>
+	        <a class="keep-playing-button">Don't Give Up</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <h1 style="text-align: center" >C2020 Version</h1>
+    <p class="game-explanation">
+      <strong class="important">INSTRUCTIONS:</strong> Utilize the <strong>arrow keys</strong> to navigate the tiles. If <strong>two tiles of the same value collide, they will combine into a single tile!</strong>
+    </p>
+  </div>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  <script src="js/tips.js"></script>
+</body>
+</html>
